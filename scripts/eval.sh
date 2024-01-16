@@ -1,0 +1,16 @@
+python ../../graphormer/evaluate/evaluate.py \
+    --user-dir ../../graphormer \
+    --save-dir ckpts/Photo \
+    --num-workers 16 \
+    --ddp-backend=legacy_ddp \
+    --dataset-name Photo \
+    --dataset-source pyg \
+    --task node_prediction \
+    --criterion node_multiclass_cross_entropy \
+    --metric acc \
+    --arch graphormer_base \
+    --num-classes 8 \
+    --batch-size 64 \
+    --load-pretrained-model-output-layer \
+    --split valid \
+    --seed 42
